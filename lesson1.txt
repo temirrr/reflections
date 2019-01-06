@@ -1,0 +1,73 @@
+How did viewing a diff between two versions of a file help you see the bug that
+was introduced?
+
+    Viewing diff, which is a commmand in MacOS/Linux cmd, helps to find the bug by marking the lines with "-" and "+" signs.
+In this way, we can see which changes were made to the code, which initially worked properly. Those highlighted differences
+can help us to note the changes, which might be the ones responsible for the bugs.
+
+
+How could having easy access to the entire history of a file make you a more
+efficient programmer in the long term?
+
+    I can see the stages the project has gone through. So knowing each stage in the project creation is crucial
+for the proper ordering of action. Also, I can see how the bugs were corrected or which problems were there on the way.
+
+What do you think are the pros and cons of manually choosing when to create a
+commit, like you do in Git, vs having versions automatically saved, like Google
+docs does?
+
+    In google docs, you can't access the older version and reset everything anymore. However, I guess, you can go through
+the whole story of editing (while you are within the session) and reset everything manually.
+We can logically separate the changes. We can control the changes not to be too small so that our code does not get
+cluttered. Also, we can organize them in the way so that each change isn't too big, so that we can clearly understand
+the purpose of each commit.
+	Another benefit of this is the following: even when doing the large work over a day, we can separate it into several commits, which will stand for separate logical changes introduced into the code. E.g. change one feature => commit => change another feature => commit. This way, it will be easier to look for the bugs later.
+
+Why do you think some version control systems, like Git, allow saving multiple
+files in one commit, while others, like Google Docs, treat each file separately?
+
+    I think it's because those files are a part of the project, so we can treat them as a single entity. In Google Docs,
+each file is a separate entity and it's an after-work to merge them into groups/folders.
+Some changes, e.g. variable-naming modification or changing some function, which affects all three files (e.g. deleting
+one of the arguments), are making differences in all files. So to have a logical change and fully finished task per commit
+it's more convenient to allow saving/editing multiple files per commit.
+If we treat each file one-by-one, the commit history will be too cluttered.
+
+How can you use the commands git log and git diff to view the history of files?
+
+    I can go to the needed repository and type "git diff" to view the whole history of commits. By pressing "down" arrow, I can extend the history of commits. It is very handy that it first prints just the last few commits and you only do extend it in case you need to go further. I think it's done with the purpose of not cluttering space too much if not needed. If you want to go back and forth in the Git Bash/CMD window, it's convenient when it's not congested. We can't remake all the history of actions, since it will be deleted after the session.
+    We can use "git diff id1name id1name" if we want to see the difference between two commits. Git Bash will help us to obtain the colored (optional) comparison of two files with deleted lines marked by "-" sign and added lines marked by "+" sign. 
+
+How might using version control make you more confident to make changes that
+could break something?
+
+    I can easily checkout at the previous version if I'm not satisfied with how the current version works or if there's some bug.
+    It's also easy to check which of the versions are responsible for the introduction of some bug or feature by checking all the previous versions, id's of which can be accessed via the "git log" command.
+
+Now that you have your workspace set up, what do you want to try using Git for?
+
+    I want to use Git for my all following massive/medium-sized projects. This version-control software will help me not to be afraid when exploring the program and making modifications. It will be helpful in comfortably adding new features one-by-one, developing branches, testing, etc.
+    I guess it should not be used for solving some tasks or probably doing some HWs, where the use of Git is not needed..
+
+
+Notes:
+-Repository is not just a collection of files but rather a collection of files with the whole history of commits.
+
+Bash Commands:
+-pwd = print working directory (shows the whole path where we are now)
+-ls, ls-a = list all files, list all files + hidden files
+-cd = change directory
+	e.g. cd /c/ - go to C drive.
+-Tab = automatically fill the words/names. 
+-clear = cleans everything up
+-mkdir "dir name" = create new directory
+-rm "dir name", rm -r "dir name" = remove the directory, remove the directory recursively (the whole directory)
+-cd .. = go one level higher
+
+Git Bash Commands:
+-git config --global color.ui auto = make the output colored
+-git diff "id1 name" "id2 name" = compare 2 id's
+-git log = being in particular repository, shows the history of all commits/ids/descriptions. Needs to be followed by q button to escape reading and writing mode.
+-git clone "repository link" = clone the repository into working directory
+-git checkout "commit id" = checkout to some of the previous IDs.
+-git checkout -b "branch name" = checking out to some new branch.
