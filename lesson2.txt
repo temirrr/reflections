@@ -7,6 +7,10 @@ version-control, which git is used for.
 How is the staging area different from the working directory and the repository?
 What value do you think it offers?
 
+	Maybe it's the area, which helps to save several versions of the files before actually committing them.
+	Maybe it helps to save the file if you introduced some changes, but if they aren't logical enough to commit or too small, then you can just hold it there until the moment the change is good enough to commit.
+	Maybe it helps to collect the files conveniently first and then commit them all at once.
+
 How can you use the staging area to make sure you have one commit per logical
 change?
 
