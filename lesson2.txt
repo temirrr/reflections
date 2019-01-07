@@ -13,9 +13,13 @@ What value do you think it offers?
 
 How can you use the staging area to make sure you have one commit per logical
 change?
+	
+	The only idea I can come up with is if we change like dozens of files per one session, and then we want to break them down into several logical parts, we can use staging area to do that. E.g. add a few changed files to the staging area, then commit them; then add the rest, then commit them.
 
 What are some situations when branches would be helpful in keeping your history
 organized? How would branches help?
+
+	Branching is a good way to be able to introduce some experimental features such as another language version, easier or somehow modified version. It will also help to add some features, which you are not sure will work or not, while you can do some clearer modifications to the master branch, which you are confident about. Seems like it's not about the history, but about the inevitability of using branches in some situations
 
 How do the diagrams help you visualize the branch structure?
 

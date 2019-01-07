@@ -66,16 +66,22 @@ Bash Commands:
 
 Git Bash Commands:
 -git config --global color.ui auto = make the output colored
--git diff "id1 name" "id2 name" = compare 2 id's
 -git log = being in particular repository, shows the history of all commits/ids/descriptions. Needs to be followed by q button to escape reading and writing mode.
 -git clone "repository link" = clone the repository into working directory
--git checkout "commit id" = checkout to some of the previous IDs.
--git checkout -b "branch name" = checking out to some new branch.
 -git add "file name" = add the file to the staging area, when you are inside your repository
 -git reset "file name" = remove undesired file from the staging area
 -git status = helps you to see which files are in the staging area, current commit, and other info.
 -git commit -m "Commit Message" = commit the files from the staging area without opening the text editor.
 -git commit = commit, but opens a text editor before commiting for filling out the message of the commit.
+-git checkout master = when we want to checkout back at the HEAD state. This should be done before we commit any changes.
+-git checkout "commit id" = checkout to some of the previous IDs.
+-git checkout -b "branch name" = checking out to some new branch, when introducing changes to some of the older commits.
+-git branch = shows the list of existing branches
+-git branch "new branch name" = creates new branch from the point we are at.
+-git diff = compares working directory with the staging area. Note that the staging area is the copy of the most recent commit until we introduce any changes to it. So if we code, take a break, and want to check which changes we have introduced since starting, we can just run git diff.
+-git diff --staged = compares the staging area with the most recent commit. Essentially (almost) the same command as the previous, but only after we have introduced changes to the staging area.
+-git diff "id1 name" "id2 name" = compare two commits. E.g. the most recent and the second-last commits.
+-git reset --hard = discards any changes either to the working directory or the staging area. Be very careful using this, since it is one of the only functions in Git, which brings irreversible changes.
 
 Udacity Git Commit Message Style Guide
 Introduction
