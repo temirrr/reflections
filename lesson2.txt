@@ -23,6 +23,8 @@ organized? How would branches help?
 
 How do the diagrams help you visualize the branch structure?
 
+	The diagrams help visualize the branch structure by representing the child-parent relationship between commits. Starting from the most recent commit on each branch, the ancestor commits are the only ones which can be reached from the most recent commits. When we checkout at some prevous commits, we receive a warning of being in HEAD-detached state, which means that any changes or commits made starting from now will be possessed by the new branch, which will be lost (I don't know whether it's competely lost or we "lose" it by not remembering the ID) unless we create a new branch and check out there.
+
 What is the result of merging two branches together? Why do we represent it in
 the diagram the way we do?
 
