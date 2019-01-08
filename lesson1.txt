@@ -67,6 +67,7 @@ Bash Commands:
 Git Bash Commands:
 -git config --global color.ui auto = make the output colored
 -git log = being in particular repository, shows the history of all commits/ids/descriptions. Needs to be followed by q button to escape reading and writing mode.
+-git log --graph --oneline "branch1 name" "branch2 name" = show the history of all commits including branches as graph
 -git clone "repository link" = clone the repository into working directory
 -git add "file name" = add the file to the staging area, when you are inside your repository
 -git reset "file name" = remove undesired file from the staging area
@@ -76,6 +77,7 @@ Git Bash Commands:
 -git checkout master = when we want to checkout back at the HEAD state. This should be done before we commit any changes.
 -git checkout "commit id" = checkout to some of the previous IDs.
 -git checkout -b "branch name" = checking out to some new branch, when introducing changes to some of the older commits.
+	equivalent to git branch "new branch name" + git checkout "new branch name" (This is done in order not to lose the following commits).
 -git branch = shows the list of existing branches
 -git branch "new branch name" = creates new branch from the point we are at.
 -git diff = compares working directory with the staging area. Note that the staging area is the copy of the most recent commit until we introduce any changes to it. So if we code, take a break, and want to check which changes we have introduced since starting, we can just run git diff.
