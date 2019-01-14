@@ -71,6 +71,7 @@ Git Bash Commands:
 -git clone "repository link" = clone the repository into working directory
 -git add "file name" = add the file to the staging area, when you are inside your repository
 -git reset "file name" = remove undesired file from the staging area
+-git reset --hard = discards any changes either to the working directory or the staging area. Be very careful using this, since it is one of the only functions in Git, which brings irreversible changes.
 -git status = helps you to see which files are in the staging area, current commit, and other info.
 -git commit -m "Commit Message" = commit the files from the staging area without opening the text editor.
 -git commit = commit, but opens a text editor before commiting for filling out the message of the commit.
@@ -80,10 +81,45 @@ Git Bash Commands:
 	equivalent to git branch "new branch name" + git checkout "new branch name" (This is done in order not to lose the following commits).
 -git branch = shows the list of existing branches
 -git branch "new branch name" = creates new branch from the point we are at.
+-git branch -d "branch1 name" = delete branch1, i.e. delete its name and not the commits which were created with that branch.
+-git merge "branch2 name" = merges branch2 to the currently checked-out branch (equivalent to git merge "branch1 name" "branch2 name" in 		any order).
+-git merge "branch2 name" "branch3 name" when "branch1 name" is checked-out = merges three branches to the "branch1 name"
+-git merge --abort = stop merging. this is the first action when there's branch conflict due to the indentation (CRLF/LF) issues.
 -git diff = compares working directory with the staging area. Note that the staging area is the copy of the most recent commit until we introduce any changes to it. So if we code, take a break, and want to check which changes we have introduced since starting, we can just run git diff.
 -git diff --staged = compares the staging area with the most recent commit. Essentially (almost) the same command as the previous, but only after we have introduced changes to the staging area.
 -git diff "id1 name" "id2 name" = compare two commits. E.g. the most recent and the second-last commits.
--git reset --hard = discards any changes either to the working directory or the staging area. Be very careful using this, since it is one of the only functions in Git, which brings irreversible changes.
+-git show "id1 name" = it will run git diff "id1 name" "id1 name parent" for the cases, when the branches are merged and we do not exactly now previous child-parent relationship.
+-git remote = shows existing remote repositories
+-git remote add "remote repo name" "remote repo URL" = add remote repository
+-git remote -v = verbose (more detailed) data about repos, which we'll fetch the data from and push the data to.
+-git push "remote repo name" "branch1 name" = pushes branch1 to the specified remote repo. E.g. git push origin master.
+-git pull = git pull origin
+-git pull "remote repo name" "branch1 name" = pulls from branch1 in remote repo (into the currently checked out branch if I got it right)all the reachable commits until the current commit. git pull <parameters> = git fetch <parameters> + git merge FETCH_HEAD (Merge into the CURRENT branch.
+-git fetch "repo name" = update all the local branches from the mentioned repo. E.g. git fetch origin.
+-git fetch origin +pu:pu maint:tmp
+	This updates (or creates, as necessary) branches pu and tmp in the local repository by fetching from the branches (respectively) pu and maint from the remote repository.
+	The pu branch will be updated even if it is does not fast-forward, because it is prefixed with a plus sign; tmp will not be.
+-git gc = garbage collection process (it actually automatically happens from time to time).
+
+
+Git settings:
+git config --global core.autocrlf true
+git config --global credential.helper wincred = password auto-remembering
+git config --global color.ui auto = making the interface of GitBash colourful
+git config --global user.name "Username"
+git config --global user.email email-address
+git config --global core.editor 'C:/Program Files/Sublime Text 3/sublime_text.exe' -n -w
+completion
+prompt
+alias for subl, browser, etc.
+
+user.name=Temirlan Myrzakhmetov
+user.email=temirlanmirzakhmetov@gmail.com
+core.editor='C:/Program Files/Sublime Text 3/sublime_text.exe' -n -w
+core.autocrlf=true
+color.ui=auto
+
+
 
 Udacity Git Commit Message Style Guide
 Introduction
