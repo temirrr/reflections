@@ -24,9 +24,22 @@ organized? How would branches help?
 How do the diagrams help you visualize the branch structure?
 
 	The diagrams help visualize the branch structure by representing the child-parent relationship between commits. Starting from the most recent commit on each branch, the ancestor commits are the only ones which can be reached from the most recent commits. When we checkout at some prevous commits, we receive a warning of being in HEAD-detached state, which means that any changes or commits made starting from now will be possessed by the new branch, which will be lost (I don't know whether it's competely lost or we "lose" it by not remembering the ID) unless we create a new branch and check out there.
+	The unreachable commits can be reached by the commit ID only until the moment when Git Garbage Collection runs and all unreachable commits are deleted.
 
 What is the result of merging two branches together? Why do we represent it in
 the diagram the way we do?
 
+	When we run git log on the merged branch, it shows the commits of the branches which combine there sorted by timestamps. It seems a bit dangerous for me since when we compare 2 subsequent commits, their git diff will be not really understandable, since they can appear to be from 2 different branches.
+	The result is the version of the program containing modifications added by both branches. It is useful to note that the changes deleted by some of the branches in comparison to the origin will be indeed deleted. The logic here is that they might have been deleted not to cause any bugs / non-needed features. On the other hand, changes added only by one of the branches will be added to the merged version.
+	We represent it the way we do since we COMBINE the features of both branches rather than updating one of them to the other.
+	There might be several problems with LF and CRLF, so using git diff to see which changes have been introduced and to check that no merging conflicts are present is a good habit to do before merging two branches.
+
 What are the pros and cons of Git's automatic merging vs. always doing merges
 manually?
+
+	Git automatically checks whether two branches can be merged without any conflicts or whether there is some conflict that has to be resolved. Then, it also clearly points out what was the reason for the conflict so that we can quickly correct it.
+	When doing manually, there will be no conflicts, since we will check everytihng on our own, however, it's so difficult to do and takes so much time that it will be very tedious. One big disadvantage of automatic merging is that sometimes during editing of the file, we cannot understand whether some lines of code were present there before or whether one of the programmers added them so that they appeared in the final version of the code.
+
+What I've found out is that the commit is more solid idea rather than the branch. The commit is the version of the code with its changes, which is stored somewhere, whereas branch just refers to the commit. Branch_name always refers to the latest commit on this branch (to the tip of the branch). git log and git diff operate both on commits and on branches, but in fact when we paste the branch_name as the argument, it just refers to the latest commit.
+
+I wrote the commit message in the wrong style, so I'll have to change it.
